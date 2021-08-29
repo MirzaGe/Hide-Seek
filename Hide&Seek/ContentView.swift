@@ -9,13 +9,24 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        VStack {
+            CardView()
+        }
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
+
+struct CardView : View {
+    var body : some View {
+        RoundedRectangle(cornerRadius: 12)
+            .shadow(radius: 12)
+            .foregroundColor(.blue)
+            .frame(width:300, height: 300)
+            .animation(.spring())
+            .offset( y: 100)
+            .onTapGesture {
+                print("Tap")
+            }
     }
 }
+
